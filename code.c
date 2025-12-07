@@ -11,14 +11,14 @@ struct Student {
     float marks;
 };
 
-/* ---------- Function Declarations ---------- */
+
 void adminMenu();
 void userMenu();
 void addStudent();
 void viewStudents();
 int loginSystem();
 
-/* --------------- MAIN FUNCTION --------------- */
+
 int main() {
     printf("============ SRMS ============\n");
 
@@ -34,7 +34,7 @@ int main() {
     return 0;
 }
 
-/* --------------- LOGIN SYSTEM --------------- */
+
 int loginSystem() {
     char username[20], password[20];
     char fileUser[20], filePass[20], fileRole[10];
@@ -58,17 +58,16 @@ int loginSystem() {
             fclose(fp);
 
             if (strcmp(fileRole, "ADMIN") == 0)
-                return 1;    // Admin
+                return 1;    
             else
-                return 2;    // User
+                return 2;   
         }
     }
 
     fclose(fp);
-    return 0;  // Login failed
+    return 0;  
 }
 
-/* --------------- ADMIN MENU --------------- */
 void adminMenu() {
     int choice;
 
@@ -92,7 +91,7 @@ void adminMenu() {
     } while (choice != 3);
 }
 
-/* --------------- USER MENU --------------- */
+
 void userMenu() {
     int choice;
 
@@ -114,9 +113,9 @@ void userMenu() {
     } while (choice != 2);
 }
 
-/* --------------- ADD STUDENT --------------- */
+
 void addStudent() {
-    FILE *fp = fopen(STUDENT_FILE, "a");  // Append mode
+    FILE *fp = fopen(STUDENT_FILE, "a");  
 
     if (!fp) {
         printf("Error opening students.txt!\n");
@@ -139,7 +138,7 @@ void addStudent() {
     printf("\n✔ Student added successfully!\n");
 }
 
-/* --------------- VIEW STUDENTS --------------- */
+
 void viewStudents() {
     FILE *fp = fopen(STUDENT_FILE, "r");
 
@@ -160,3 +159,4 @@ void viewStudents() {
 
     fclose(fp);
 }
+
